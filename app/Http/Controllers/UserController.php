@@ -66,9 +66,8 @@ class UserController extends Controller
 
     public function age($name = "moshiur", $age = 67){
       
-       echo  $age;
-       echo "<br>";
-       echo  $name;
+       return $age . ' ' . $name;
+   
     }
 
 

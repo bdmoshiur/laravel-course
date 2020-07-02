@@ -30,7 +30,9 @@ Route::view('/', 'welcome', ['name' => 'Taylor']);
 // Route::get('users/{id}/delete','UserController@delete'); 
 // Route::get('users/{id}/edit','UserController@edit'); 
 
-Route::get('/users','UserController@index');
+Route::prefix('admin')->group(function(){
+
+    Route::get('/users','UserController@index');
 
 Route::get('/add-user','UserController@store');
 Route::post('/create-user','UserController@create');
@@ -38,4 +40,9 @@ Route::post('/create-user','UserController@create');
 
 Route::any('/update-user','UserController@update');
 Route::get('/show-user/{id}','UserController@show');
-Route::get('/show-user-age/{name?}/{age?}','UserController@age')->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
+Route::get('/show-user-age/{name?}/{age?}','UserController@age')
+                ->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
+
+
+
+});
