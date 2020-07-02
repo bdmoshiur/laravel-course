@@ -60,6 +60,18 @@ class UserController extends Controller
         return $users;
     }
 
+    public function show($id){
+        return $id;
+    }
+
+    public function age($name = "moshiur", $age = 67){
+      
+       echo  $age;
+       echo "<br>";
+       echo  $name;
+    }
+
+
     public function create(){
 
         return "Uesr added 1";

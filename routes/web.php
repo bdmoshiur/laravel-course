@@ -37,4 +37,5 @@ Route::post('/create-user','UserController@create');
 
 
 Route::any('/update-user','UserController@update');
-
+Route::get('/show-user/{id}','UserController@show');
+Route::get('/show-user-age/{name?}/{age?}','UserController@age')->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
