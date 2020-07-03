@@ -30,19 +30,27 @@ Route::view('/', 'welcome', ['name' => 'Taylor']);
 // Route::get('users/{id}/delete','UserController@delete'); 
 // Route::get('users/{id}/edit','UserController@edit'); 
 
-Route::prefix('admin')->group(function(){
+// Route::prefix('admin')->group(function(){
 
-    Route::get('/users','UserController@index');
+//     Route::get('/users','UserController@index');
 
-Route::get('/add-user','UserController@store');
-Route::post('/create-user','UserController@create');
+// Route::get('/add-user','UserController@store');
+// Route::post('/create-user','UserController@create');
 
 
-Route::any('/update-user','UserController@update');
-Route::get('/show-user/{id}','UserController@show');
-Route::get('/show-user-age/{name?}/{age?}','UserController@age')
-                ->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
+// Route::any('/update-user','UserController@update');
+// Route::get('/show-user/{id}','UserController@show');
+// Route::get('/show-user-age/{name?}/{age?}','UserController@age')
+//                 ->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
 
+
+
+// });
+
+
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin',  'name' => 'admin'], function() { 
+
+    Route::get('/post','UserController@post')->name('post');
 
 
 });

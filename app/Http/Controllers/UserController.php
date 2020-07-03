@@ -54,36 +54,42 @@ class UserController extends Controller
 
 
 
-    public function index(){
+    // public function index(){
 
-        $users = User::all();
-        return $users;
-    }
+    //     $users = User::all();
+    //     return $users;
+    // }
 
-    public function show($id){
-        return $id;
-    }
+    // public function show($id){
+    //     return $id;
+    // }
 
-    public function age($name = "moshiur", $age = 67){
+    // public function age($name = "moshiur", $age = 67){
       
-       return $age . ' ' . $name;
+    //    return $age . ' ' . $name;
    
-    }
+    // }
 
 
-    public function create(){
+    // public function create(){
 
-        return "Uesr added 1";
-    }
+    //     return "Uesr added 1";
+    // }
 
-    public function store(){
+    // public function store(){
 
-        return view('create_user');
-    }
+    //     return view('create_user');
+    // }
 
 
-    public function update(){
-        return "update user";
+    // public function update(){
+    //     return "update user";
+    // }
+
+
+
+    public function post(){
+        return "post";
     }
 
 
