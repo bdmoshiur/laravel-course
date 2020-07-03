@@ -54,3 +54,23 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin',  'name' => 'admin'], 
 
 
 });
+
+
+
+
+Route::get('create_user', function() {
+    
+    $data =[
+        'name' => 'Moshiur Rahman',
+        'email' => 'moshiurcse888@gmail.com',
+        'votes' => '200',
+        'created_at' => now(),
+        'updated_at' => now(),
+    ];
+
+    DB::table('a_customers')->insert($data);
+
+});
+
+
+Route::get('customer','CustomerController@index');
